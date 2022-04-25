@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <?php
+
+    if (isset($message)) {
+        // echo "require_once";
+        // die;
+
+
+        $str = '<form method="post"  action=""><select id="name"  ;" name="id">';
+
+        for ($i = 0; $i < count($message); $i++) {
+
+            $str .= '<option value="' . $message[$i]["_id"]['$oid']. '">' . $message[$i]["name"] . '</option>';
+        }
+        // echo "<pre>";
+        // print_r($message[0]);
+        // print_r($message[0]["_id"]['$oid']);
+        // print_r($message[0]["name"]);
+        // echo "edge";
+        // die();
+        $str.='</select>';
+    }
+
+
+    ?>
+
+    <div>
+        <form method="post" action="">
+            <!-- <input type="text" name="pname" placeholder="productname"> -->
+            <?php echo $str; ?>
+            <input type="text" name="uname" placeholder="username">
+            <input type="number" name="quantity">
+            <input type="email" name="email" placeholder="example@.com">
+            <input type="text" name="token" placeholder="TOKEN">
+            <input type="submit" name="submit" value="place Order">
+        </form>
+    </div>
+</body>
+
+</html>
